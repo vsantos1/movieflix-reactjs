@@ -14,7 +14,7 @@ yarn dev
 
 ## Vsantos+ movies with ThemovieDatabase
 
-<video src="./public/preview.mp4" autoplay muted nocontrols />
+<img src="./public/preview.jpg" alt="project preview"/>
 
 ## 🛠️ Tecnologies
 
