@@ -3,7 +3,9 @@ import React from "react";
 const Movie = () => {
   return (
     <>
-      <h1>movie/2</h1>
+      <div>
+        <h1> Unfinished</h1>
+      </div>
     </>
   );
 };

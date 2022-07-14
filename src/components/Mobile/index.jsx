@@ -21,11 +21,11 @@ const MobileMenu = () => {
         <>
           <Container onMouseLeave={disableMobileMenu}>
             <MobileWrapper>
-              <MobileNavigate to="/">Início</MobileNavigate>
-              <MobileNavigate to="/">Séries</MobileNavigate>
-              <MobileNavigate to="/">Filmes</MobileNavigate>
-              <MobileNavigate to="/">Bombando</MobileNavigate>
-              <MobileNavigate to="/">Minha Lista</MobileNavigate>
+              <MobileNavigate to="/">INÍCIO</MobileNavigate>
+              <MobileNavigate to="/">SÉRIES</MobileNavigate>
+              <MobileNavigate to="/">FILMES</MobileNavigate>
+              <MobileNavigate to="/">MINHA LISTA</MobileNavigate>
+              <MobileNavigate to="/">ORIGINAIS</MobileNavigate>
             </MobileWrapper>
           </Container>
         </>

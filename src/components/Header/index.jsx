@@ -1,36 +1,59 @@
-import React from "react";
-import { Container, NavigationBar, Logo, Navigate, LinkList, Settings, SearchIcon, UserAvatar, Navigation, SettingsIcon, UserSettings } from "./styles";
+import React, { useState } from "react";
+import { Container, SearchBar, SearchForm, NavigationBar, Logo, Navigate, LinkList, Settings, SearchIcon, UserAvatar, Navigation, SettingsIcon, UserSettings } from "./styles";
 import Notifications from "../Buttons/Notifications";
 import MobileMenu from "../Mobile";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
+  const navigate = useNavigate();
+
+  const [searchBar, setSearchBar] = useState(false);
+  const [search, setSearch] = useState("");
+
+  const handleSearchMovie = (e) => {
+    e.preventDefault();
+    if (!search) return;
+    navigate(`/search?q=${search}`);
+    setSearch("");
+  };
+
+  const toggleSearchBar = () => {
+    setSearchBar(!searchBar);
+  };
+
   return (
     <Container>
       <NavigationBar>
-        <Logo src="/netflix.svg" />
+        <a href="#header">
+          <Logo src="/disney-logo.svg" />
+        </a>
 
         <MobileMenu />
 
         <Navigation>
           <LinkList>
             <Navigate className="active" to="/">
-              Início
+              INÍCIO
             </Navigate>
 
-            <Navigate to="/movie/2"> Séries</Navigate>
+            <Navigate to="/"> SÉRIES</Navigate>
 
-            <Navigate to="/"> Filmes</Navigate>
+            <Navigate to="/"> FILMES</Navigate>
 
-            <Navigate to="/"> Bombando</Navigate>
+            <Navigate to="/"> MINHA LISTA</Navigate>
 
-            <Navigate to="/"> Minha lista</Navigate>
+            <Navigate to="/"> ORIGINAIS</Navigate>
           </LinkList>
 
           <Settings>
-            <SearchIcon />
+            <SearchForm onSubmit={handleSearchMovie}>
+              {searchBar ? <SearchBar type="text" placeholder="Titulos e gêneros" onChange={(e) => setSearch(e.target.value)} value={search} /> : null}
+              <SearchIcon onClick={toggleSearchBar} />
+            </SearchForm>
+
             <Notifications />
             <UserSettings>
-              <UserAvatar src="https://occ-0-1896-3852.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABSpZNurO43SdpXK7qIpM5kVvcvH1XEvYohsRgHgcwCnAhll0BD9iKmDPphsDBaEBpG-BEVMIxbVxYvZ3dxH4CbsxGWGVzwA.png?r=9b2" />
+              <UserAvatar src="/avatar.png" />
               <SettingsIcon />
             </UserSettings>
           </Settings>

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { AiOutlineSearch, AiFillCaretDown } from "../../styles/Icons";
 
@@ -23,7 +23,7 @@ export const NavigationBar = styled.nav`
 
 export const Logo = styled.img`
   width: 5rem;
-  height: 4rem;
+  height: 3rem;
 
   @media (max-width: 600px) {
     height: 2rem;
@@ -31,10 +31,44 @@ export const Logo = styled.img`
   margin-left: 0.5rem;
 `;
 
+const breatheAnimation = keyframes`
+  from{
+    width: 0%;
+    opacity: 0.2;
+    
+  }
+  to{
+    width:180px;
+    opacity: 1;
+  }
+`;
+export const SearchForm = styled.form`
+  display: flex;
+  align-items: center;
+  > input {
+    animation-name: ${breatheAnimation};
+    animation-duration: 2s;
+  }
+`;
+
+export const SearchBar = styled.input`
+  padding: 4px 4px;
+  margin: 0 2px;
+  border: 1px solid var(--white);
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+
+  border-radius: 2px;
+  ::placeholder {
+    color: var(--cultured);
+  }
+`;
+
 export const Navigate = styled(Link)`
   color: var(--white);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: bold;
   white-space: nowrap;
   padding: 2px 4px;
 
@@ -82,11 +116,9 @@ const IconsStyle = css`
 `;
 
 export const UserAvatar = styled.img`
-  width: 2.5rem;
-  height: 2rem;
+  width: 2rem;
   flex-shrink: 0;
-  aspect-ratio: 13/9;
-  border-radius: 4px;
+  aspect-ratio: 1/1;
   margin: 0 0.5rem;
 `;
 

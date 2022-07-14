@@ -2,18 +2,18 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import { FaPlay, AiOutlineInfoCircle } from "../../styles/Icons";
 
-export const BackgroundImg = styled.div`
+export const BackgroundImg = styled.img`
   width: 100%;
-  height: 600px;
-  background-position: center;
+  min-height: 600px;
+  height: 200px;
   flex-shrink: 0;
-  background-image: url("https://occ-0-1896-3852.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABa9ZvcVqWBPdWr6fb_ZfH4kVU753Qzbjojz-rsLsmWPHnmghSb2yfsyLt2t_ETHRWepKZVu4q1_X0zXNpu0-5qKJqfk3pU9txB0F.webp?r=1e5");
-  background-repeat: no-repeat;
-  background-size: cover;
-
+  aspect-ratio: 1/1;
+  object-position: center;
+  border-bottom: 2px solid var(--cultured);
   @media (max-width: 580px) {
     height: 400px;
-    background-size: cover;
+    object-fit: cover;
+    min-height: 300px;
   }
 `;
 
@@ -26,7 +26,6 @@ export const MovieContent = styled.div`
   display: flex;
   min-width: 360px;
   min-height: 300px;
-  margin-left: 1rem;
   align-items: center;
   position: absolute;
   margin-top: 2rem;
@@ -47,6 +46,7 @@ export const ButtonsContent = styled.div`
   align-items: center;
   color: var(--light-gray);
   font-weight: 500;
+  justify-content: center;
 `;
 
 const ButtonsStlye = css`
@@ -54,7 +54,7 @@ const ButtonsStlye = css`
   padding: 5px 6px;
   margin-top: 3rem;
   border-radius: 2px;
-  border: 1px solid var(--black-shadows);
+  border: 1px solid white;
   font-size: 600;
   white-space: nowrap;
   display: flex;
@@ -65,6 +65,8 @@ const ButtonsStlye = css`
 export const LinkButton = styled(Link)`
   ${ButtonsStlye};
   color: black;
+  padding: 6px 12px;
+  border: 1px solid var(--black-shadows);
   background-color: var(--cultured);
   &:hover {
     transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -84,11 +86,12 @@ export const InformationButton = styled(Link)`
 `;
 
 export const ImageTittle = styled.img`
-  z-index: 0;
-  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-shrink: 0;
-  object-fit: cover;
-  margin-left: 10%;
+  width: 30%;
+  margin-left: 5%;
 `;
 
 export const PlayIcon = styled(FaPlay)`

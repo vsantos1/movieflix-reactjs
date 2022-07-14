@@ -7,6 +7,7 @@ export const Globals = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     color: var(--cultured);
+  
 }
 
 a,li{
@@ -16,9 +17,50 @@ a,li{
 
 html,body, #root{
     max-width: 100vw;
-    max-height: 2000px;
-    height: 2000px;
+    max-height: 100vh;
+    height: 100vh;
 
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 100px;
+}
+
+.movie{
+  display:grid;
+  grid-template-columns: repeat(3,2fr);
+  width: 100%;
+  gap: 4px;
+  justify-content:center;
+  align-items:center;
+  @media (max-width: 1200px){
+
+grid-template-columns: repeat(2,1fr);
+}
+  @media (max-width: 800px){
+
+    grid-template-columns: repeat(2,1fr);
+  }
+  @media (max-width: 650px){
+
+grid-template-columns: repeat(1,1fr);
+}
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255)
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 *,button, input{
@@ -30,17 +72,15 @@ html,body, #root{
 }
 
 html{
-    background-color: var(--darker);
+  background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 38%, rgba(7,67,139,1) 62%, rgba(7,75,141,1) 78%, rgba(5,132,158,1) 100%);
 }
 
 
 :root{
     --darker: #0b090aff;
     --secondary: #161a1dff;
-    --blood-red: #660708ff;
-    --ruby-red: #a4161aff;
     --carnelian: #ba181bff;
-    --imperial-red: #e5383bff;
     --black-shadows: #b1a7a6ff;
     --light-gray: #d3d3d3ff;
     --cultured: #f5f3f4ff;

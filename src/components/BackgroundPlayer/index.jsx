@@ -1,20 +1,23 @@
 import React from "react";
 
-import { BackgroundImg, ImageTittle, Container, MovieContent, ButtonsContent, Sinopse, LinkButton, InformationIcon, PlayIcon, InformationButton } from "./styles";
+import { BackgroundImg, ImageTittle, Container, MovieContent, ButtonsContent, LinkButton, InformationIcon, PlayIcon, InformationButton } from "./styles";
+
+const BG_SEARCH = import.meta.env.VITE_BG_ORIGINAL;
+const POSTER = import.meta.env.VITE_DOCTOR_BG;
 
 const BackgroundPlayer = () => {
   return (
     <Container>
-      <BackgroundImg />
+      <BackgroundImg src={`${BG_SEARCH}/${POSTER}`} />
 
       <MovieContent>
-        <ImageTittle src="https://occ-0-1896-3852.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABcgQSKD70hfPg4t_w6l_5kvm68YUJA0vkqRiFydmwndlU9BdlVShakNdumM29eSEc7VySv4ClrU8IEAyUd1ZEQYObzHKkg4a2mHv-0Cf5pu4.webp?r=" />
+        <ImageTittle src="/nwh.png" alt="Spider-Man:No way home available" />
 
         <ButtonsContent>
-          <LinkButton to="/movie/3">
+          <LinkButton to="/">
             <PlayIcon /> Assistir
           </LinkButton>
-          <InformationButton to="/movie/4">
+          <InformationButton to="/">
             <InformationIcon /> Mais Informações
           </InformationButton>
         </ButtonsContent>

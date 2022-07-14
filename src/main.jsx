@@ -4,6 +4,7 @@ import App from "./App";
 import Search from "./pages/search";
 import Movie from "./pages/Movie";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Globals } from "./styles/Global";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/search" element={<Search />} />
         <Route path="/movie/:id" element={<Movie />} />
       </Routes>
+      <Globals />
     </BrowserRouter>
   </React.StrictMode>
 );

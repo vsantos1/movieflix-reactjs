@@ -1,7 +1,17 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { AiFillCaretDown, AiFillCaretUp } from "../../styles/Icons";
 
+const breatheAnimation = keyframes`
+  from{
+    height: 0px;
+    opacity: 0.4;
+  }
+  to{
+    height: 125px;
+    opacity: 1;
+  }
+`;
 export const Container = styled.div`
   z-index: 99;
   margin-left: 6rem;
@@ -14,6 +24,8 @@ export const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
   justify-content: center;
   transition: 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation-name: ${breatheAnimation};
+  animation-duration: 2s;
 
   @media (min-width: 580px) {
     display: none;
@@ -22,12 +34,13 @@ export const Container = styled.div`
 
 export const MenuTrigger = styled.a`
   z-index: 99;
+  font-weight: bold;
 
   cursor: pointer;
   padding: 0 20px;
   display: flex;
   align-items: center;
-  font-size: 13px;
+  font-size: 14px;
 
   @media (min-width: 580px) {
     display: none;
