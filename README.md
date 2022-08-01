@@ -1,4 +1,4 @@
-# movieflix-reactjs
+# movieflix
 
 Simple movies streaming made with react and styled components.
 
